@@ -21,7 +21,7 @@ class Empleado:
         return self.genero
 
 
-def leer_archivo(archivo):
+def read_file(archivo):
     with open(archivo, "r") as f:
         reader = csv.reader(f, delimiter=",")
         next(reader, None)  # Omitir la cabecera
@@ -73,7 +73,7 @@ def persona_mas_ganadora(empleados):
 
 
 if __name__ == "__main__":
-    empleados = leer_archivo("empleados.csv")
+    empleados = read_file("empleados.csv")
 
     persona_mayor_edad_result = persona_mayor_edad(empleados)
     print("Persona con mayor edad:", persona_mayor_edad_result.nombre, persona_mayor_edad_result.apellido, persona_mayor_edad_result.edad)
